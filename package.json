@@ -5,12 +5,12 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "export NODE_ENV=DEVELOPMENT&&nodemon backend/server",
-    "prod": "export NODE_ENV=PRODUCTION&&nodemon backend/server",
+    "dev": "cross-env NODE_ENV=DEVELOPMENT nodemon backend/server",
+    "prod": "cross-env NODE_ENV=PRODUCTION nodemon backend/server",
     "seeder": "node backend/utils/seeder.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "author": "Shubham Kumar",
+  "author": "Deepa Kumari",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -28,6 +28,7 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.15"
   }
 }
